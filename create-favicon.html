@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Creator</title>
+</head>
+<body>
+    <canvas id="canvas" width="32" height="32" style="border: 1px solid #000; image-rendering: pixelated; width: 128px; height: 128px;"></canvas>
+    <br>
+    <img id="logo" src="logo.png" style="display: none;">
+    <br>
+    <button onclick="downloadFavicon()">Download Favicon</button>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const img = document.getElementById('logo');
+        
+        img.onload = function() {
+            // Clear canvas
+            ctx.fillStyle = 'transparent';
+            ctx.fillRect(0, 0, 32, 32);
+            
+            // The planet appears to be roughly in the left portion of the logo
+            // Let's crop just that circular planet part
+            // Estimate the planet is at roughly x:10-150, y:10-210 in the original
+            const sourceX = 10;
+            const sourceY = 10;
+            const sourceWidth = 140;
+            const sourceHeight = 200;
+            
+            // Draw the cropped planet to fit 32x32
+            ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, 32, 32);
+        };
+        
+        function downloadFavicon() {
+            // Convert canvas to PNG blob
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'favicon.png';
+                a.click();
+                URL.revokeObjectURL(url);
+            }, 'image/png');
+        }
+        
+        // Trigger the image load
+        img.src = 'logo.png';
+    </script>
+</body>
+</html>
