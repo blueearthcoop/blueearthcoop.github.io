@@ -1,110 +1,444 @@
 ---
 layout: default
-title: Kringla Cookies
-description: Traditional Norwegian kringla cookies from Blue Earth Cooperative Bakery, handmade in Blue Earth, Minnesota.
+title: Welcome to the Kringla-verse
+description: Traditional and seasonal kringla cookies from Blue Earth Cooperative Bakery, handmade in Blue Earth, Minnesota.
+hide_phone: true
 ---
 
-<div class="hero">
-    <img src="/bakery/photos/traditional-kringla.jpg" alt="Traditional kringla cookies from Blue Earth Cooperative Bakery" style="width: 100%; max-width: 720px; max-height: 430px; object-fit: cover; margin: 0 auto 18px; border-radius: 12px; box-shadow: 0 8px 24px var(--shadow); display: block;" onclick="openLightbox(this.src, this.alt)">
-    <h1>Kringla Cookies</h1>
-    <p>Soft, hand-shaped Norwegian cookies baked in Blue Earth, Minnesota.</p>
-    <p class="disclaimer">*These products are homemade and not subject to state inspection.</p>
-</div>
+<style>
+    .kv-page {
+        --kv-ink: #24364b;
+        --kv-blue: #2f6fb0;
+        --kv-sky: #cfe9f7;
+        --kv-mint: #d9f2df;
+        --kv-pink: #f3abc3;
+        --kv-yellow: #f7cf5f;
+        --kv-cream: #fff9ed;
+        --kv-card: #fffdf8;
+        --kv-border: rgba(36, 54, 75, 0.14);
+        color: var(--kv-ink);
+    }
 
-<div class="btn-row">
-    <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Online</a>
-    <a href="https://www.facebook.com/profile.php?id=61576711986089" target="_blank" class="btn btn-outline">Follow on Facebook</a>
-</div>
+    .kv-page h1,
+    .kv-page h2,
+    .kv-page h3 {
+        color: var(--kv-ink);
+    }
 
-<div class="page-content">
-    <h1>Blue Earth's Heritage Cookie</h1>
+    .kv-hero {
+        position: relative;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: minmax(0, 1.02fr) minmax(280px, 0.98fr);
+        gap: 24px;
+        align-items: center;
+        min-height: 520px;
+        padding: 42px;
+        margin-bottom: 24px;
+        border-radius: 12px;
+        background:
+            radial-gradient(circle at 16% 16%, rgba(247, 207, 95, 0.82) 0 11%, transparent 12%),
+            radial-gradient(circle at 86% 18%, rgba(243, 171, 195, 0.72) 0 10%, transparent 11%),
+            linear-gradient(135deg, #e6f7ff 0%, #fff8df 48%, #f8e6ef 100%);
+        border: 2px solid rgba(47, 111, 176, 0.18);
+        box-shadow: 0 14px 36px rgba(36, 54, 75, 0.14);
+    }
 
-    <p>Kringla is one of our signature bakery items: a soft, tender Norwegian cookie shaped by hand into its classic loop. It is simple, nostalgic, and perfect with coffee, tucked into a market bag, or shared around the table.</p>
+    .kv-hero-copy {
+        position: relative;
+        z-index: 1;
+        max-width: 540px;
+    }
 
-    <p>We bake traditional vanilla kringla along with rotating seasonal flavors. Availability changes by bake day, so check the ordering page or Facebook for the current lineup.</p>
+    .kv-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 6px 12px;
+        margin-bottom: 16px;
+        border-radius: 999px;
+        background: rgba(255, 253, 248, 0.82);
+        border: 1px solid rgba(36, 54, 75, 0.12);
+        color: var(--kv-blue);
+        font-size: 0.82rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0;
+    }
 
-    <div class="pull-quote">
-        A soft little cookie with deep local roots, made from scratch in small batches.
-    </div>
+    .kv-hero h1 {
+        margin: 0 0 14px;
+        font-size: clamp(2.55rem, 7vw, 5rem);
+        line-height: 0.98;
+        border: 0;
+        padding: 0;
+    }
 
-    <h2>Current and Seasonal Flavors</h2>
-    <div class="menu-grid">
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/traditional-kringla.jpg" alt="Traditional vanilla kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Traditional Vanilla</h3>
-                <p>The classic soft kringla, lightly sweet and tender.</p>
+    .kv-hero p {
+        max-width: 500px;
+        margin-bottom: 18px;
+        color: #334a63;
+        font-size: 1.13rem;
+        line-height: 1.55;
+    }
+
+    .kv-hero-art {
+        position: relative;
+        z-index: 1;
+        min-height: 390px;
+    }
+
+    .kv-hero-art img {
+        position: absolute;
+        display: block;
+        border-radius: 8px;
+        box-shadow: 0 12px 28px rgba(36, 54, 75, 0.16);
+        cursor: pointer;
+    }
+
+    .kv-ufo {
+        top: 0;
+        right: 0;
+        width: min(82%, 390px);
+        transform: rotate(4deg);
+    }
+
+    .kv-badge {
+        left: 0;
+        bottom: 18px;
+        width: min(46%, 190px);
+        transform: rotate(-7deg);
+        border-radius: 50%;
+    }
+
+    .kv-friends {
+        right: 16px;
+        bottom: 0;
+        width: min(54%, 230px);
+        transform: rotate(2deg);
+    }
+
+    .kv-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .kv-section {
+        margin-bottom: 24px;
+        padding: 34px;
+        border-radius: 12px;
+        background: var(--kv-card);
+        border: 1px solid var(--kv-border);
+        box-shadow: 0 8px 24px rgba(36, 54, 75, 0.08);
+    }
+
+    .kv-section h2 {
+        margin: 0 0 14px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid rgba(47, 111, 176, 0.16);
+        font-size: 1.85rem;
+    }
+
+    .kv-intro-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
+        gap: 24px;
+        align-items: center;
+    }
+
+    .kv-note {
+        padding: 18px 20px;
+        border-radius: 10px;
+        background: #edf8ee;
+        border: 1px solid rgba(60, 130, 78, 0.18);
+        font-weight: 700;
+        color: #2f5f3a;
+    }
+
+    .kv-flavor-grid,
+    .kv-issue-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+    }
+
+    .kv-flavor,
+    .kv-issue {
+        overflow: hidden;
+        border-radius: 8px;
+        background: #fffaf0;
+        border: 1px solid var(--kv-border);
+        box-shadow: 0 4px 14px rgba(36, 54, 75, 0.07);
+    }
+
+    .kv-flavor img {
+        width: 100%;
+        height: 165px;
+        object-fit: cover;
+        border-radius: 0;
+        cursor: pointer;
+    }
+
+    .kv-flavor div,
+    .kv-issue div {
+        padding: 14px;
+    }
+
+    .kv-flavor h3,
+    .kv-issue h3 {
+        margin: 0 0 5px;
+        font-family: 'Source Sans 3', sans-serif;
+        font-size: 1.06rem;
+    }
+
+    .kv-flavor p,
+    .kv-issue p {
+        margin: 0;
+        color: #526477;
+        font-size: 0.94rem;
+        line-height: 1.45;
+    }
+
+    .kv-issue img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 0;
+        background: #f8edf3;
+        cursor: pointer;
+    }
+
+    .kv-issue.issue-wide img {
+        object-fit: contain;
+        background: linear-gradient(135deg, #f7d8e5, #d9eff9);
+    }
+
+    .kv-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 16px;
+        margin-top: 18px;
+    }
+
+    .kv-gallery img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    .kv-gallery > img {
+        object-fit: contain;
+        background: linear-gradient(135deg, #f7d8e5, #d9eff9);
+    }
+
+    .kv-disclaimer {
+        margin-top: 18px;
+        color: #69798a;
+        font-size: 0.82rem;
+    }
+
+    @media (max-width: 820px) {
+        .kv-hero,
+        .kv-intro-grid,
+        .kv-gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .kv-hero {
+            min-height: 0;
+            padding: 28px 22px;
+        }
+
+        .kv-hero-art {
+            min-height: 310px;
+        }
+
+        .kv-ufo {
+            width: min(76%, 340px);
+        }
+
+        .kv-friends {
+            width: min(50%, 210px);
+        }
+
+        .kv-section {
+            padding: 24px 20px;
+        }
+
+        .kv-actions .btn {
+            width: 100%;
+            max-width: 320px;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 520px) {
+        .kv-hero h1 {
+            font-size: 2.45rem;
+        }
+
+        .kv-hero-art {
+            min-height: 260px;
+        }
+
+        .kv-badge {
+            width: 42%;
+        }
+
+        .kv-friends {
+            width: 48%;
+        }
+
+        .kv-issue img {
+            height: 240px;
+        }
+    }
+</style>
+
+<div class="kv-page">
+    <section class="kv-hero">
+        <div class="kv-hero-copy">
+            <div class="kv-kicker">Blue Earth Cooperative Bakery</div>
+            <h1>Welcome to the Kringla-verse</h1>
+            <p>Soft, hand-shaped Norwegian cookies with a little small-town bakery magic. Traditional vanilla is the classic, and the seasonal flavors keep the adventure going.</p>
+            <div class="kv-actions">
+                <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Online</a>
+                <a href="https://www.facebook.com/profile.php?id=61576711986089" target="_blank" class="btn btn-outline">Follow on Facebook</a>
             </div>
         </div>
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/raspberry-kringla.jpg" alt="Raspberry kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Raspberry</h3>
-                <p>Bright berry flavor in a soft hand-shaped cookie.</p>
-            </div>
+        <div class="kv-hero-art" aria-label="Kringla-verse artwork">
+            <img class="kv-ufo" src="/kringla/assets/sprout-ufo-kringla.png" alt="Sprout flying through the Kringla-verse in a spaceship" onclick="openLightbox(this.src, this.alt)">
+            <img class="kv-badge" src="/kringla/assets/kringla-club-badge.png" alt="Kringla Club badge for Blue Earth Cooperative Bakery" onclick="openLightbox(this.src, this.alt)">
+            <img class="kv-friends" src="/kringla/assets/bakery-kringla-friends.png" alt="Blue Earth Cooperative Bakery Sprout and kringla friends" onclick="openLightbox(this.src, this.alt)">
         </div>
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/pistachio-kringla.jpg" alt="Pistachio kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Pistachio</h3>
-                <p>Rich, nutty, and gently sweet.</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/lemon-kringla.jpg" alt="Lemon kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Lemon</h3>
-                <p>A bright citrus twist on the classic.</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/strawberry-kringla.jpg" alt="Strawberry kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Strawberry</h3>
-                <p>Sweet berry flavor with a cheerful pink finish.</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/almond-kringla.jpg" alt="Almond kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Almond</h3>
-                <p>Delicate almond flavor in a traditional shape.</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/ube-kringla.jpg" alt="Ube kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Ube</h3>
-                <p>A colorful purple yam variation with soft vanilla notes.</p>
-            </div>
-        </div>
-        <div class="menu-item">
-            <div class="menu-item-image"><img src="/bakery/photos/pineapple-kringla.jpg" alt="Pineapple kringla" onclick="openLightbox(this.src, this.alt)"></div>
-            <div class="menu-item-content">
-                <h3>Pineapple</h3>
-                <p>A sunny seasonal flavor in the same soft cookie style.</p>
-            </div>
-        </div>
-    </div>
+    </section>
 
-    <h2>How to Order</h2>
-    <p>Kringla is usually sold by the order and may appear in limited weekly flavors. Pre-order through Simply Bread when it is listed, or follow us on Facebook for market and pickup-day announcements.</p>
+    <section class="kv-section">
+        <div class="kv-intro-grid">
+            <div>
+                <h2>Blue Earth's Heritage Cookie</h2>
+                <p>Kringla is one of our signature bakery items: a soft, tender Norwegian cookie shaped by hand into its classic loop. It is simple, nostalgic, and perfect with coffee, tucked into a market bag, or shared around the table.</p>
+                <p>We bake traditional vanilla kringla along with rotating seasonal flavors. Availability changes by bake day, so check the ordering page or Facebook for the current lineup.</p>
+            </div>
+            <div class="kv-note">
+                Small batches, local roots, and just enough whimsy to make a cookie feel like a tiny event.
+            </div>
+        </div>
+    </section>
 
-    <div class="btn-row" style="justify-content: flex-start;">
-        <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Kringla</a>
-        <a href="/bakery/" class="btn btn-outline">See Bakery Menu</a>
-        <a href="tel:507-519-0003" class="btn btn-outline">Call 507-519-0003</a>
-    </div>
-</div>
+    <section class="kv-section">
+        <h2>Current and Seasonal Flavors</h2>
+        <p>Traditional vanilla is the heart of the lineup. Seasonal flavors appear when inspiration, market days, and bake schedules line up.</p>
+        <div class="kv-flavor-grid">
+            <article class="kv-flavor">
+                <img src="/bakery/photos/traditional-kringla.jpg" alt="Traditional vanilla kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Traditional Vanilla</h3>
+                    <p>The classic soft kringla, lightly sweet and tender.</p>
+                </div>
+            </article>
+            <article class="kv-flavor">
+                <img src="/bakery/photos/raspberry-kringla.jpg" alt="Raspberry kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Raspberry</h3>
+                    <p>Bright berry flavor in a soft hand-shaped cookie.</p>
+                </div>
+            </article>
+            <article class="kv-flavor">
+                <img src="/bakery/photos/pistachio-kringla.jpg" alt="Pistachio kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Pistachio</h3>
+                    <p>Rich, nutty, and gently sweet.</p>
+                </div>
+            </article>
+            <article class="kv-flavor">
+                <img src="/bakery/photos/lemon-kringla.jpg" alt="Lemon kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Lemon</h3>
+                    <p>A bright citrus twist on the classic.</p>
+                </div>
+            </article>
+            <article class="kv-flavor">
+                <img src="/bakery/photos/strawberry-kringla.jpg" alt="Strawberry kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Strawberry</h3>
+                    <p>Sweet berry flavor with a cheerful pink finish.</p>
+                </div>
+            </article>
+            <article class="kv-flavor">
+                <img src="/bakery/photos/almond-kringla.jpg" alt="Almond kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Almond</h3>
+                    <p>Delicate almond flavor in a traditional shape.</p>
+                </div>
+            </article>
+            <article class="kv-flavor">
+                <img src="/bakery/photos/ube-kringla.jpg" alt="Ube kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Ube</h3>
+                    <p>A colorful purple yam variation with soft vanilla notes.</p>
+                </div>
+            </article>
+            <article class="kv-flavor">
+                <img src="/bakery/photos/pineapple-kringla.jpg" alt="Pineapple kringla" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Pineapple</h3>
+                    <p>A sunny seasonal flavor in the same soft cookie style.</p>
+                </div>
+            </article>
+        </div>
+    </section>
 
-<div class="page-content">
-    <h2>Photo Gallery</h2>
-    <div class="photo-grid">
-        <img src="/bakery/photos/traditional-kringla.jpg" alt="Traditional vanilla kringla" onclick="openLightbox(this.src, this.alt)">
-        <img src="/bakery/photos/raspberry-kringla.jpg" alt="Raspberry kringla" onclick="openLightbox(this.src, this.alt)">
-        <img src="/bakery/photos/pistachio-kringla.jpg" alt="Pistachio kringla" onclick="openLightbox(this.src, this.alt)">
-        <img src="/bakery/photos/lemon-kringla.jpg" alt="Lemon kringla" onclick="openLightbox(this.src, this.alt)">
-        <img src="/bakery/photos/strawberry-kringla.jpg" alt="Strawberry kringla" onclick="openLightbox(this.src, this.alt)">
-        <img src="/bakery/photos/ube-kringla.jpg" alt="Ube kringla" onclick="openLightbox(this.src, this.alt)">
-    </div>
+    <section class="kv-section">
+        <h2>Sprout's Adventures</h2>
+        <p>Follow Sprout through the Kringla-verse, where every flavor has a story and every market day can turn into an adventure.</p>
+        <div class="kv-issue-grid">
+            <article class="kv-issue">
+                <img src="/kringla/assets/sprouts-adventures-issue-1.png" alt="Sprout's Adventures issue one cover" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Issue 1</h3>
+                    <p>Sprout, VK, and the beginning of the Kringla-verse.</p>
+                </div>
+            </article>
+            <article class="kv-issue">
+                <img src="/kringla/assets/sprouts-adventures-issue-2.jpg" alt="Sprout's Adventures issue two art" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Issue 2</h3>
+                    <p>A Giant Days adventure and a new flavor to find.</p>
+                </div>
+            </article>
+            <article class="kv-issue">
+                <img src="/kringla/assets/sprouts-adventures-issue-3.jpg" alt="Sprout's Adventures issue three cover" onclick="openLightbox(this.src, this.alt)">
+                <div>
+                    <h3>Issue 3</h3>
+                    <p>A sweet corn Kringla-verse story for Giant Days.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="kv-section">
+        <h2>How to Order</h2>
+        <p>Kringla is usually sold by the order and may appear in limited weekly flavors. Pre-order through Simply Bread when it is listed, or follow us on Facebook for market and pickup-day announcements.</p>
+        <div class="kv-actions">
+            <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Kringla</a>
+            <a href="/bakery/" class="btn btn-outline">See Bakery Menu</a>
+        </div>
+        <p class="kv-disclaimer">These products are homemade and not subject to state inspection.</p>
+    </section>
+
+    <section class="kv-section">
+        <h2>From the Kringla-verse</h2>
+        <div class="kv-gallery">
+            <img src="/kringla/assets/sprout-kringla-character.png" alt="Sprout and a smiling kringla character" onclick="openLightbox(this.src, this.alt)">
+            <img src="/bakery/photos/traditional-kringla.jpg" alt="Traditional vanilla kringla cookies" onclick="openLightbox(this.src, this.alt)">
+            <img src="/bakery/photos/raspberry-kringla.jpg" alt="Raspberry kringla cookies" onclick="openLightbox(this.src, this.alt)">
+        </div>
+    </section>
 </div>
