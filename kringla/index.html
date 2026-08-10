@@ -173,6 +173,18 @@ hide_phone: true
         border: 1px solid rgba(255, 201, 79, 0.28);
     }
 
+    .kv-tagline {
+        display: inline-block;
+        max-width: 520px;
+        margin: 10px 0 0;
+        color: var(--kv-gold);
+        font-family: 'Fredoka', 'Source Sans 3', sans-serif;
+        font-size: 1.22rem;
+        font-weight: 700;
+        line-height: 1.28;
+        text-shadow: 0 0 18px rgba(255, 201, 79, 0.25);
+    }
+
     .kv-cookie-planet {
         width: 68px;
         aspect-ratio: 1;
@@ -358,6 +370,29 @@ hide_phone: true
         border: 2px dashed rgba(255, 201, 79, 0.38);
         border-radius: 50%;
         transform: rotate(-14deg);
+    }
+
+    .kv-town-card {
+        padding: 22px;
+        border-radius: 8px;
+        background:
+            radial-gradient(circle at 90% 12%, rgba(255, 201, 79, 0.2), transparent 28%),
+            linear-gradient(135deg, rgba(245, 240, 232, 0.96), rgba(241, 199, 123, 0.9));
+        border: 1px solid rgba(255, 201, 79, 0.45);
+        color: #382517;
+        box-shadow: 0 12px 26px rgba(0, 0, 0, 0.18);
+    }
+
+    .kv-town-card h3 {
+        margin: 0 0 8px;
+        color: #382517;
+        font-size: 1.22rem;
+    }
+
+    .kv-town-card p {
+        margin: 0;
+        color: #4f3723;
+        font-weight: 600;
     }
 
     .kv-flavor-grid,
@@ -609,7 +644,8 @@ hide_phone: true
         <div class="kv-hero-copy">
             <div class="kv-kicker">Beamed in from Blue Earth</div>
             <h1>Welcome to the Kringla-verse</h1>
-            <p>Soft, hand-shaped Norwegian cookies from a tiny cosmic dough-planet. Traditional vanilla is the classic launch point, and the seasonal flavors make every bake day feel like a new planet to visit.</p>
+            <p>Step into the comic world of Sprout, VK, and the flavor kringlas. The UFO lifts off from Blue Earth, Minnesota, zaps across the stars, and brings a whole cast of soft, hand-shaped Norwegian cookies back home to the bakery table.</p>
+            <p class="kv-tagline">A galaxy of flavors! A universe of friends!</p>
             <div class="kv-actions">
                 <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Online</a>
                 <a href="https://www.facebook.com/profile.php?id=61576711986089" target="_blank" class="btn btn-outline">Follow on Facebook</a>
@@ -618,7 +654,7 @@ hide_phone: true
                 <div class="kv-cookie-planet" aria-hidden="true"></div>
                 <div>
                     <strong>Origin: The Kringla Nebula</strong>
-                    <span>Where tender cookie loops form in swirls of vanilla, butter, and stardust.</span>
+                    <span>In the Kringla-verse, every kringla is unique. Every flavor has a story. Every friend makes the adventure sweeter.</span>
                 </div>
             </div>
         </div>
@@ -634,17 +670,17 @@ hide_phone: true
             <div>
                 <h2>Cookies From Outer Space</h2>
                 <p>Kringla is one of our signature bakery items: a soft, tender Norwegian cookie shaped by hand into its classic loop. It is simple, nostalgic, and perfect with coffee, tucked into a market bag, or shared around the table.</p>
-                <p>In the Kringla-verse, every batch starts on a warm little dough-planet and lands in Blue Earth for pickup days, market weekends, and the occasional out-of-this-world flavor adventure.</p>
+                <p>In Sprout's Adventures, Blue Earth is home base: Main Street, Giant Days, local partners, and Heather's bakery table. The Kringla-verse is where Sprout and VK travel when a new flavor needs a story.</p>
             </div>
             <div class="kv-note">
-                Small batches, local roots, and just enough space magic to make a cookie feel like a tiny event.
+                Baked with love. Shared with our community.
             </div>
         </div>
     </section>
 
     <section class="kv-section">
-        <h2>Planets to Visit</h2>
-        <p>Traditional vanilla is the heart of the lineup. Seasonal flavors appear when inspiration, market days, and bake schedules line up.</p>
+        <h2>Find Your Flavor!</h2>
+        <p>Traditional vanilla is the original kringla. Seasonal flavors appear when inspiration, local stories, market days, and bake schedules line up.</p>
         <div class="kv-flavor-grid">
             <article class="kv-flavor">
                 <img src="/bakery/photos/traditional-kringla.jpg" alt="Traditional vanilla kringla" onclick="openLightbox(this.src, this.alt)">
@@ -707,7 +743,7 @@ hide_phone: true
 
     <section class="kv-section">
         <h2>Sprout's Adventures</h2>
-        <p>Follow Sprout through the Kringla-verse, where every flavor has a story and every market day can turn into an intergalactic bake day.</p>
+        <p>Follow Sprout and VK through the Kringla-verse, where every flavor has a story and every market day can turn into an intergalactic bake day.</p>
         <div class="kv-issue-grid">
             <article class="kv-issue">
                 <img src="/kringla/assets/sprouts-adventures-issue-1.png" alt="Sprout's Adventures issue one cover" onclick="openLightbox(this.src, this.alt)">
@@ -736,6 +772,10 @@ hide_phone: true
     <section class="kv-section">
         <h2>How to Order</h2>
         <p>Kringla is usually sold by the order and may appear in limited weekly flavors. Pre-order through Simply Bread when it is listed, or follow us on Facebook for market and pickup-day announcements.</p>
+        <div class="kv-town-card">
+            <h3>Blue Earth is home base</h3>
+            <p>The space adventure starts with real small-town roots: Blue Earth, Minnesota, local flavor stories, and bakery pickup days.</p>
+        </div>
         <div class="kv-actions">
             <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Kringla</a>
             <a href="/bakery/" class="btn btn-outline">See Bakery Menu</a>
