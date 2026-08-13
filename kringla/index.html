@@ -80,25 +80,48 @@ hide_phone: true
 
     .kv-hero {
         position: relative;
+        margin: -44px -44px 0;
+        overflow: hidden;
+        background: #080b2a;
+    }
+
+    .kv-hero-band {
+        position: relative;
+        z-index: 2;
+        padding: 40px 44px 22px;
+        background: #080b2a;
+    }
+
+    .kv-hero-band::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -34px;
+        height: 34px;
+        background: linear-gradient(180deg, #080b2a 0%, rgba(8, 11, 42, 0) 100%);
+        pointer-events: none;
+    }
+
+    .kv-hero-image {
+        position: relative;
         display: flex;
         align-items: flex-end;
-        min-height: 680px;
-        margin: -44px -44px 0;
-        padding: 72px 44px 58px;
+        min-height: 640px;
+        padding: 120px 44px 58px;
         overflow: hidden;
         background-image: url('/kringla/assets/kringla-verse-hero-background.png');
         background-position: center;
         background-size: cover;
     }
 
-    .kv-hero::before {
+    .kv-hero-image::before {
         content: "";
         position: absolute;
         inset: 0;
         background:
-            linear-gradient(90deg, rgba(5, 5, 24, 0.9) 0%, rgba(5, 5, 24, 0.72) 38%, rgba(5, 5, 24, 0.26) 72%, rgba(5, 5, 24, 0.08) 100%),
-            linear-gradient(0deg, rgba(5, 5, 24, 0.82) 0%, transparent 42%),
-            radial-gradient(circle at 28% 52%, rgba(255, 79, 163, 0.18), transparent 32%);
+            linear-gradient(0deg, rgba(5, 5, 24, 0.9) 0%, rgba(5, 5, 24, 0.68) 22%, rgba(5, 5, 24, 0.06) 54%, transparent 100%),
+            linear-gradient(90deg, rgba(5, 5, 24, 0.36) 0%, transparent 48%);
         pointer-events: none;
     }
 
@@ -109,12 +132,12 @@ hide_phone: true
     }
 
     .kv-hero h1 {
-        margin: 0 0 18px;
+        margin: 0;
         padding: 0;
         border: 0;
-        max-width: 960px;
+        max-width: 100%;
         color: #fff8d7;
-        font-size: clamp(3.4rem, 5.2vw, 4.25rem);
+        font-size: clamp(3rem, 4.5vw, 3.7rem);
         font-weight: 700;
         line-height: 1.3;
         white-space: nowrap;
@@ -314,11 +337,17 @@ hide_phone: true
         }
 
         .kv-hero {
-            min-height: 620px;
             margin: -28px -20px 0;
-            padding: 78px 20px 38px;
+        }
+
+        .kv-hero-band {
+            padding: 32px 20px 18px;
+        }
+
+        .kv-hero-image {
+            min-height: 540px;
+            padding: 100px 20px 38px;
             background-position: 62% center;
-            align-items: flex-end;
         }
 
         .kv-section {
@@ -338,20 +367,26 @@ hide_phone: true
         }
 
         .kv-hero {
-            min-height: 530px;
             margin: -22px -14px 0;
-            padding: 56px 14px 30px;
+        }
+
+        .kv-hero-band {
+            padding: 26px 14px 15px;
+        }
+
+        .kv-hero-image {
+            min-height: 480px;
+            padding: 92px 14px 30px;
             background-position: 58% center;
         }
 
-        .kv-hero::before {
+        .kv-hero-image::before {
             background:
-                linear-gradient(90deg, rgba(5, 5, 24, 0.96) 0%, rgba(5, 5, 24, 0.88) 54%, rgba(5, 5, 24, 0.46) 100%),
-                linear-gradient(0deg, rgba(5, 5, 24, 0.88) 0%, transparent 50%);
+                linear-gradient(0deg, rgba(5, 5, 24, 0.94) 0%, rgba(5, 5, 24, 0.74) 30%, rgba(5, 5, 24, 0.14) 62%, transparent 100%),
+                linear-gradient(90deg, rgba(5, 5, 24, 0.3) 0%, transparent 52%);
         }
 
         .kv-hero h1 {
-            margin-bottom: 14px;
             font-size: 1.72rem;
             -webkit-text-stroke: 1px rgba(11, 11, 46, 0.82);
         }
@@ -378,12 +413,16 @@ hide_phone: true
 
 <div class="kv-page">
     <section class="kv-hero">
-        <div class="kv-hero-copy">
+        <div class="kv-hero-band">
             <h1>Welcome to the Kringla-verse</h1>
-            <div class="kv-hero-subhead">The most kringla flavors<br>on planet Earth.</div>
-            <div class="kv-hero-tagline">A galaxy of flavors! A universe of friends!</div>
-            <div class="kv-actions">
-                <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Now</a>
+        </div>
+        <div class="kv-hero-image" aria-label="Sprout and kringla characters in the Kringla-verse">
+            <div class="kv-hero-copy">
+                <div class="kv-hero-subhead">The most kringla flavors<br>on planet Earth.</div>
+                <div class="kv-hero-tagline">A galaxy of flavors! A universe of friends!</div>
+                <div class="kv-actions">
+                    <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Now</a>
+                </div>
             </div>
         </div>
     </section>
