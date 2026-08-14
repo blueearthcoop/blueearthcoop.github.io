@@ -248,12 +248,13 @@ hide_phone: true
     }
 
     .kv-hero-tagline {
-        display: inline-block;
-        max-width: 520px;
+        display: block;
+        width: 100%;
+        max-width: none;
         margin: 0;
         color: var(--kv-gold);
         font-family: 'SpaceTimeBase', 'Baloo 2', 'Fredoka', 'Source Sans 3', sans-serif;
-        font-size: clamp(1.35rem, 2.8vw, 2.1rem);
+        font-size: clamp(1.1rem, 2.2vw, 1.72rem);
         font-weight: 400;
         font-style: italic;
         line-height: 1.35;
@@ -261,6 +262,10 @@ hide_phone: true
         text-transform: none;
         white-space: nowrap;
         text-shadow: 0 0 18px rgba(255, 201, 79, 0.25);
+    }
+
+    .kv-hero-band .kv-hero-tagline {
+        align-self: stretch;
     }
 
     .kv-actions {
