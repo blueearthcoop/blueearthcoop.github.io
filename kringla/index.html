@@ -27,6 +27,26 @@ hide_phone: true
         background: #080b2a;
     }
 
+    .site-container:has(.kv-page) .site-nav {
+        background: #080b2a;
+        border: 1px solid rgba(79, 224, 255, 0.16);
+        box-shadow: none;
+    }
+
+    .site-container:has(.kv-page) .site-nav .nav-links a {
+        color: #f5f0e8;
+    }
+
+    .site-container:has(.kv-page) .site-nav .nav-links a:hover,
+    .site-container:has(.kv-page) .site-nav .nav-links a.active {
+        background: #ff4fa3;
+        color: #f5f0e8;
+    }
+
+    .site-container:has(.kv-page) .site-nav .nav-logo {
+        filter: drop-shadow(0 0 10px rgba(245, 240, 232, 0.34));
+    }
+
     .site-container:has(.kv-page) .site-footer {
         background: #080b2a;
         color: #f5f0e8;
@@ -395,9 +415,15 @@ hide_phone: true
         }
 
         .kv-hero-image {
-            min-height: 540px;
-            padding: 100px 20px 8px;
-            background-position: 62% center;
+            min-height: 500px;
+            padding: 76px 20px 8px;
+            background-position: 24% 34%;
+        }
+
+        .kv-hero h1,
+        .kv-hero-subhead,
+        .kv-hero-tagline {
+            font-family: 'Fredoka', 'Baloo 2', 'Source Sans 3', sans-serif;
         }
 
         .kv-section {
@@ -425,9 +451,9 @@ hide_phone: true
         }
 
         .kv-hero-image {
-            min-height: 480px;
-            padding: 92px 14px 8px;
-            background-position: 58% center;
+            min-height: 430px;
+            padding: 70px 14px 8px;
+            background-position: 18% 32%;
         }
 
         .kv-hero-image::before {
@@ -438,17 +464,20 @@ hide_phone: true
 
         .kv-hero h1 {
             font-size: 1.45rem;
+            font-weight: 700;
             -webkit-text-stroke: 1px rgba(11, 11, 46, 0.82);
         }
 
         .kv-hero-subhead {
             margin-bottom: 12px;
             font-size: clamp(1.38rem, 6.4vw, 1.6rem);
+            font-weight: 700;
             -webkit-text-stroke: 1px rgba(11, 11, 46, 0.82);
         }
 
         .kv-hero-tagline {
             font-size: 1.12rem;
+            font-weight: 600;
         }
 
         .kv-actions {
@@ -465,11 +494,11 @@ hide_phone: true
     <section class="kv-hero">
         <div class="kv-hero-band">
             <h1><span>welcome to the</span><span>Kringla-verse</span></h1>
-            <div class="kv-hero-tagline">A galaxy of flavors! A universe of friends!</div>
         </div>
         <div class="kv-hero-image" aria-label="Sprout and kringla characters in the Kringla-verse">
             <div class="kv-hero-copy">
                 <div class="kv-hero-subhead"><span>The most kringla flavors</span><span>on planet Earth.</span></div>
+                <div class="kv-hero-tagline">A galaxy of flavors! A universe of friends!</div>
                 <div class="kv-actions">
                     <a href="https://app.simply-bread.co/blueearthcooperativebakery/" target="_blank" class="btn">Order Now</a>
                 </div>
