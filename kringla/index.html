@@ -6,7 +6,17 @@ hide_phone: true
 ---
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Fredoka:wght@500;600;700&display=swap');
+
+    @font-face {
+        font-family: 'Space Time';
+        src:
+            url('/kringla/assets/fonts/space-time/spacetime-regular.woff2') format('woff2'),
+            url('/kringla/assets/fonts/space-time/spacetime-regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
 
     .page-content:has(.kv-page) {
         overflow: hidden;
@@ -90,6 +100,7 @@ hide_phone: true
         z-index: 2;
         padding: 40px 44px 22px;
         background: #080b2a;
+        text-align: center;
     }
 
     .kv-hero-band::after {
@@ -108,7 +119,7 @@ hide_phone: true
         display: flex;
         align-items: flex-end;
         min-height: 640px;
-        padding: 120px 44px 58px;
+        padding: 120px 44px 26px;
         overflow: hidden;
         background-image: url('/kringla/assets/kringla-verse-hero-background.png');
         background-position: center;
@@ -137,8 +148,9 @@ hide_phone: true
         border: 0;
         max-width: 100%;
         color: #fff8d7;
+        font-family: 'Space Time', 'Baloo 2', 'Fredoka', 'Source Sans 3', sans-serif;
         font-size: clamp(3rem, 4.5vw, 3.7rem);
-        font-weight: 700;
+        font-weight: 800;
         line-height: 1.3;
         white-space: nowrap;
         -webkit-text-stroke: 2px rgba(11, 11, 46, 0.78);
@@ -153,9 +165,9 @@ hide_phone: true
         max-width: 740px;
         margin: 0 0 16px;
         color: #fff8d7;
-        font-family: 'Fredoka', 'Source Sans 3', sans-serif;
+        font-family: 'Space Time', 'Baloo 2', 'Fredoka', 'Source Sans 3', sans-serif;
         font-size: clamp(2.45rem, 4.4vw, 3.55rem);
-        font-weight: 700;
+        font-weight: 800;
         line-height: 1.3;
         -webkit-text-stroke: 1.5px rgba(11, 11, 46, 0.78);
         text-shadow:
@@ -179,7 +191,7 @@ hide_phone: true
         max-width: 520px;
         margin: 0;
         color: var(--kv-gold);
-        font-family: 'Fredoka', 'Source Sans 3', sans-serif;
+        font-family: 'Space Time', 'Baloo 2', 'Fredoka', 'Source Sans 3', sans-serif;
         font-size: clamp(1.35rem, 2.8vw, 2.1rem);
         font-weight: 700;
         font-style: italic;
@@ -346,7 +358,7 @@ hide_phone: true
 
         .kv-hero-image {
             min-height: 540px;
-            padding: 100px 20px 38px;
+            padding: 100px 20px 24px;
             background-position: 62% center;
         }
 
@@ -376,7 +388,7 @@ hide_phone: true
 
         .kv-hero-image {
             min-height: 480px;
-            padding: 92px 14px 30px;
+            padding: 92px 14px 20px;
             background-position: 58% center;
         }
 
@@ -387,7 +399,7 @@ hide_phone: true
         }
 
         .kv-hero h1 {
-            font-size: 1.72rem;
+            font-size: 1.38rem;
             -webkit-text-stroke: 1px rgba(11, 11, 46, 0.82);
         }
 
